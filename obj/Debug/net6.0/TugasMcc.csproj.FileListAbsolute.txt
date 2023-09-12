@@ -1,0 +1,14 @@
+C:\Users\ASUS\source\repos\TugasMcc\bin\Debug\net6.0\TugasMcc.exe
+C:\Users\ASUS\source\repos\TugasMcc\bin\Debug\net6.0\TugasMcc.deps.json
+C:\Users\ASUS\source\repos\TugasMcc\bin\Debug\net6.0\TugasMcc.runtimeconfig.json
+C:\Users\ASUS\source\repos\TugasMcc\bin\Debug\net6.0\TugasMcc.dll
+C:\Users\ASUS\source\repos\TugasMcc\bin\Debug\net6.0\TugasMcc.pdb
+C:\Users\ASUS\source\repos\TugasMcc\obj\Debug\net6.0\TugasMcc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\source\repos\TugasMcc\obj\Debug\net6.0\TugasMcc.AssemblyInfoInputs.cache
+C:\Users\ASUS\source\repos\TugasMcc\obj\Debug\net6.0\TugasMcc.AssemblyInfo.cs
+C:\Users\ASUS\source\repos\TugasMcc\obj\Debug\net6.0\TugasMcc.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\TugasMcc\obj\Debug\net6.0\TugasMcc.dll
+C:\Users\ASUS\source\repos\TugasMcc\obj\Debug\net6.0\refint\TugasMcc.dll
+C:\Users\ASUS\source\repos\TugasMcc\obj\Debug\net6.0\TugasMcc.pdb
+C:\Users\ASUS\source\repos\TugasMcc\obj\Debug\net6.0\TugasMcc.genruntimeconfig.cache
+C:\Users\ASUS\source\repos\TugasMcc\obj\Debug\net6.0\ref\TugasMcc.dll
