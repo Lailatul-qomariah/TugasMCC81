@@ -6,7 +6,7 @@ namespace TugasMcc;
 
 public class Program
 {
-    static void Menu()
+    public static void MenuGanjilGenap()
     {
         /*
          * <summary>method untuk menampilkan menu yang tersedia<summary>
@@ -79,7 +79,7 @@ public class Program
         /*<Param int = limit > menampung limit angka inputan user dan digunakan untuk perhitungan </param>*/
         /*<Param string = choice> menampung data inputan pilihan user </param>
          */
-        
+
 
         if (limit <= 0) //cek jika inputan limit = 0 dan bilangan negatif
         {
@@ -127,15 +127,122 @@ public class Program
     }
 
 
+    public static void MenuUser()
+    {
+        User user1 = new User();
+        bool isRunning = true;
+        while (isRunning)
+        {
+            Console.WriteLine("\n========================================" +
+            "\n\t BASIC AUTHENTICATION \t\n========================================");
+            Console.WriteLine("1. Create User \n2. Show User \n3. Search User \n4. Login User \n5. Exit");
+            Console.WriteLine("-------------------------------------");
+            Console.Write("input : ");
+
+            if (int.TryParse(Console.ReadLine(), out int input))
+
+            {
+                //Console.WriteLine(input); tidak usah ditampilkan
+                switch (input) //inputan user dijadikan sebagai kondisi dalam switch
+                {
+                    case 1:
+                        Console.Write("First Name: ");
+                        string firstName = Console.ReadLine();
+                        Console.Write("Last Name : ");
+                        string lastName = Console.ReadLine();
+                        string passwd;
+                        bool validPsswd;
+                        do
+                        {
+                            Console.Write("Password : ");
+                            passwd = Console.ReadLine();
+                            validPsswd = User.ValidatePassword(passwd);
+                            if (validPsswd == false)
+                            {
+                                Console.WriteLine("Password must have at least 8 characters with at" +
+                                " least one Capital letter, one lower case letter, and one number.");
+                            }
+                        } while (validPsswd == false);
+                        {
+                            user1.CreateUser(firstName, lastName, passwd);
+
+                        }
+                        break;
+                    case 2:
+
+                        Console.WriteLine("menampilkan data semua user");
+                        user1.ShowUser();
+                        Console.WriteLine("Menu\n1. Edit \n2. Delete \n3. Back");
+                        int inpCrud = int.Parse(Console.ReadLine());
+                        bool isLoop = true;
+                        switch (inpCrud)
+                        {
+                            case 1:
+                                Console.Write("Masukkan Id yang ingin di EDIT : ");
+                                if (int.TryParse(Console.ReadLine(), out int inpUpdates))
+                                {
+                                    user1.EditUser(inpUpdates);
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid input. Please enter a valid ID.");
+                                }
+                                break;
+
+                            case 2:
+                                Console.WriteLine("Masukkan Id yang ingin di DELETE : ");
+                                if (int.TryParse(Console.ReadLine(), out int inpDeletes))
+                                {
+                                    user1.DeleteUser(inpDeletes);
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid input. Please enter a valid ID.");
+                                }
+                                break;
+
+                            case 3:
+                                isLoop = false;
+                                break;
+
+                        }
+                        break;
+                    case 3:
+                        Console.WriteLine("==CARI AKUN==");
+                        Console.WriteLine("Masukkan nama : ");
+                        string checkUser = Console.ReadLine();
+                        user1.SearchUser(checkUser);
+                        break;
+                    case 4:
+                        Console.WriteLine("ini untuk login");
+                        Console.Write("USERNAME : ");
+                        string inpUserName = Console.ReadLine();
+                        Console.Write("PASSWORD : ");
+                        string inpPsswd = Console.ReadLine();
+                        user1.Login(inpUserName, inpPsswd);
+                        break;
+                    case 5:
+                        isRunning = false; //set isRunning to false untuk exit
+                        break;
+                    default:
+                        isRunning = false; //set isRunning to false untuk exit
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Masukkan pilihan menu dengan benar"); //output ketika inputan pilihan menu user != int
+            }
+
+        }
+
+    }
 
     public static void Main(string[] args)
     {
-        Menu();
-
-        /* membuat objek
-        Employees Ria = new Employees("ria", "Bondowoso", "0821111111", "15");
-        Ria.Umur = "23";
-        Ria.Disply();*/
+        MenuUser();
 
 
     }
